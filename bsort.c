@@ -3,16 +3,20 @@
 
 void bsort(int *arr ,int s ){
 for(int i=0;i<s-1  ;i++){
+    int flag = 0 ;
     for(int j =i+1 ;j<s ;j++){
         if(arr[i]>arr[j]){
             int temp = arr[j] ;
             arr[j] = arr[i];
             arr[i] = temp ;
+            flag = 1;
         }
+        
+    }
+    if(flag==0){
+    break ; 
     }
 }
-
-
 }
 
 int main()
