@@ -25,7 +25,7 @@ int pindex =rand()%(end-start);
 swap(arr+end,arr+pindex);
 return partition(arr,start,end);
 }
-void sort(int * arr,int start ,int end ){
+void quicksort(int * arr,int start ,int end ){
 if(start <end){
 int pindex =randpart(arr,start,end) ;
 sort(arr,start,pindex-1 ) ;
@@ -38,7 +38,7 @@ sort(arr,pindex+1,end);
 int main()
 {
 int arr[10] = {9,3,1,0,2,4,5,6,7,8};
-sort(arr,0,10) ;
+quicksort(arr,0,10) ;
 for(int i = 0  ; i <10 ;i ++){
     printf("%d ",arr[i]) ;
 }
