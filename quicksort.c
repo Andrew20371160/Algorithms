@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h
+#include <time.h>
 void swap(int * n1 , int * n2 ){
 int temp = *n1 ;
 *n1 = *n2 ;
@@ -18,15 +19,18 @@ for(int i= start ;i<end; i++){
 swap(arr+pindex,arr+end) ;
 return pindex ;
 }
-
-void sort(int * arr,int start ,int end ){
-if(start >=end){
-    return ;
+int randpart(int *arr,int start,int end){
+srand(time(NULL));
+int pindex =rand()%(end-start);
+swap(arr+end,arr+pindex);
+return partition(arr,start,end);
 }
-int pindex =partition(arr,start,end) ;
+void sort(int * arr,int start ,int end ){
+if(start <end){
+int pindex =randpart(arr,start,end) ;
 sort(arr,start,pindex-1 ) ;
 sort(arr,pindex+1,end);
-
+}
 
 }
 
