@@ -21,7 +21,7 @@ return pindex ;
 }
 int randpart(int *arr,int start,int end){
 srand(time(NULL));
-int pindex =rand()%(end-start);
+int pindex =start+rand()%(end-start);
 swap(arr+end,arr+pindex);
 return partition(arr,start,end);
 }
