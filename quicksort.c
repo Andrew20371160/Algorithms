@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h
+#include <stdlib.h>
 #include <time.h>
 void swap(int * n1 , int * n2 ){
 int temp = *n1 ;
@@ -28,8 +28,8 @@ return partition(arr,start,end);
 void quicksort(int * arr,int start ,int end ){
 if(start <end){
 int pindex =randpart(arr,start,end) ;
-sort(arr,start,pindex-1 ) ;
-sort(arr,pindex+1,end);
+quicksort(arr,start,pindex-1 ) ;
+quicksort(arr,pindex+1,end);
 }
 
 }
