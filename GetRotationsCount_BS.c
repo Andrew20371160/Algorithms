@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-int getrotcount(int *arr, int size){
+int rotationcount(int *arr, int size){
 int low = 0 ;
 int high = size -1  ;
 while(low<=high){
@@ -27,7 +27,7 @@ return -1 ;
 int main(){
 int arr[] = {3,5,8,11,12,2};
 int size = sizeof(arr)/sizeof(int);
-printf("%d ",getrotcount(arr,size)) ;
+printf("%d ",rotationcount(arr,size)) ;
 
 return 0;
 }
