@@ -58,7 +58,13 @@ if(head->next==NULL){
 }
 rev_list(head->next,rev);
 *rev=insert(head->data,*rev);
-
+}
+node * del_list(node*head){
+while(head){
+node * ptr = head ; 
+head= head->next ;
+free(ptr); ptr = NULL ;  
+}
 }
 int main()
 {
@@ -70,5 +76,7 @@ display(head);
 rev_list(head,&rev);
 display(rev);
 system("pause");
+head =  del_list(head);  
+rev = del_list(rev);  
     return 0;
 }
