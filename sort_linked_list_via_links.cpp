@@ -89,7 +89,7 @@ void sort_list(void){
     node *mini= before_min->next;
 
     // If the node with the minimum data is not the head of the list, move it to the head
-    if(before_min != head){
+    if(before_min != head&&head->data>before_min->next->data){
         // Update the links to move the node with the minimum data to the head of the list
         before_min->next = mini->next;
         mini->next = head;
@@ -98,11 +98,11 @@ void sort_list(void){
 
     // Traverse the rest of the list
     node *ptr = head;
-    while(ptr){
+    while(ptr->next){
         // Find the node before the node with the minimum data in the rest of the list
         before_min = get_before_min(ptr);
         // If the node before the node with the minimum data is not the current node, move the node with the minimum data after the current node
-        if(before_min != ptr){
+        if(before_min->next != ptr){
             // Store the node with the minimum data
             mini = before_min->next;
             // Update the links to move the node with the minimum data after the current node
@@ -118,7 +118,7 @@ void sort_list(void){
 };
 
 int main(){
-int arr[]  = {1516,98,2,3,3,1};
+int arr[]  = {0,98,2,3,3,1};
 List l1(sizeof(arr)/sizeof(int),arr) ;
 l1.sort_list() ;
 l1.show( );
